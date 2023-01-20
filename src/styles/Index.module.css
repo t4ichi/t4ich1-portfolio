@@ -1,0 +1,11 @@
+.title{
+    border-left: solid #0066cc 10px;
+    padding-left: 10px;
+}
+
+.history_chart{
+    margin: auto;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    text-align: center;
+}
