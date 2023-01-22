@@ -1,5 +1,7 @@
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import Alert from 'react-bootstrap/Alert';
+import Achievements from '../components/Achievements';
+import Footer from '../components/Footer';
 import MyHistoryChart from '../components/MyHistoryChart';
 import Profile from '../components/Profile';
 import { Skills } from '../components/Skills';
@@ -51,23 +53,31 @@ const IndexPage = () => {
     ],
   }
   return (
-    <Container>
-      <Row>
-        {/* <h1 className={styles.title}>Profile</h1> */}
-        <Profile />
-        <h1 className={styles.title}>年表</h1>
-          <Card className={styles.history_chart}>
-            <MyHistoryChart myEvents={EmptyMyHistory.events}  width='50%'readonly={true}/>
-          </Card>
-        
-        <h1 className={styles.title}>Skills</h1>
-        <Skills />
-        <h1 className={styles.title}>Works</h1>
-        <Works />
-        
-      </Row>
-    </Container>
-    
+    <>
+      <Container>
+        <Row>
+          <>
+            <Col>
+            <Profile />
+            </Col>
+            <Col>
+              <h1 className={styles.title}>Achievements</h1>
+              <Achievements />
+            </Col>
+          </>
+          <div>
+            <h1 className={styles.title}>Skills</h1>
+            <Skills />
+          </div>
+          
+          <div>
+            <h1 className={styles.title}>Works</h1>
+          </div>
+          <Works />
+        </Row>
+      </Container>
+    <Footer />
+    </>
     );
 };
 

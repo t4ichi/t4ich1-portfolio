@@ -1,13 +1,42 @@
 import Image from 'next/image'
 import React from 'react'
-import { Card, Container, Row } from 'react-bootstrap'
+import { Card, CardGroup, Container, Row } from 'react-bootstrap'
 import styles from '../styles/Skills.module.css'
 
+
+type skill_data = {
+  skill_name: string;
+  pass: string;
+}
+
+const SkillCards = ({skilldata, title}) => {
+  return(
+    <Card className={styles.card}>
+    <Card.Title className={styles.card_title}>{title}</Card.Title>
+      <Card.Body className={styles.container}>
+        {skilldata.map(({skill_name,pass}) => (
+          <Card className={styles.skill_card}>
+            <Card.Body>
+              <Image 
+                className={styles.skill_icon}
+                src={pass}
+                alt='skill-icon'   
+                width={40}
+                height={40}
+              />
+              <Card.Text className={styles.skill_text}>
+                {skill_name}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+      ))}              
+      </Card.Body>
+    </Card>
+  )
+}
+
 export const Skills = () => {
-    type skill_data = {
-      skill_name: string;
-      pass: string;
-    }
+
     const skill_many: skill_data[] = [
       {
         skill_name: 'Unity',
@@ -47,11 +76,14 @@ export const Skills = () => {
         pass: '/skill/nextjs.png'
       },
       {
+        skill_name: 'Java',
+        pass: '/skill/java.png'
+      },
+      {
         skill_name: 'SQLite',
         pass: '/skill/sqlite.png'
       },
     ];
-
         
     const skill_few: skill_data[] = [
       {
@@ -61,10 +93,6 @@ export const Skills = () => {
       {
       skill_name: 'C++',
         pass: '/skill/c-.png'
-      },
-      {
-        skill_name: 'Java',
-        pass: '/skill/java.png'
       },
       {
         skill_name: 'PHP',
@@ -107,81 +135,9 @@ export const Skills = () => {
     return(
       <Container>
         <Row>
-          <Card className={styles.card}>
-            <Card.Title className={styles.card_title}>成果物を作った経験がある</Card.Title>
-            {/* <Card.Title className={styles.card_title}>よく使っている</Card.Title> */}
-              <Card.Body className={styles.container}>
-
-              {skill_many.map(({skill_name,pass}) => (
-              <Card className={styles.skill_card}
-                style={{ width: '8rem', height: '8rem'}}
-              >
-                <Card.Body className={styles.skill_body}>
-                  <Image 
-                    className={styles.skill_icon}
-                    src={pass}
-                    alt='skill-icon'   
-                    width={50}
-                    height={50}
-                  />
-                  <Card.Text className={styles.skill_name}>
-                    {skill_name}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              ))}
-            </Card.Body>
-          </Card>
-
-          <Card className={styles.card}>
-            <Card.Title className={styles.card_title}>授業や趣味で使ったことがある</Card.Title>
-              <Card.Body className={styles.container}>
-
-              {skill_few.map(({skill_name,pass}) => (
-              <Card className={styles.skill_card}
-                style={{ width: '8rem', height: '8rem'}}
-              >
-                <Card.Body className={styles.skill_body}>
-                  <Image 
-                    className={styles.skill_icon}
-                    src={pass}
-                    alt='skill-icon'   
-                    width={50}
-                    height={50}
-                  />
-                  <Card.Text className={styles.skill_name}>
-                    {skill_name}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              ))}
-            </Card.Body>
-          </Card>
-
-          <Card className={styles.card}>
-            <Card.Title className={styles.card_title}>使った経験があるツール</Card.Title>
-              <Card.Body className={styles.container}>
-
-              {skill_tool.map(({skill_name,pass}) => (
-              <Card className={styles.skill_card}
-                style={{ width: '8rem', height: '8rem'}}
-              >
-                <Card.Body className={styles.skill_body}>
-                  <Image 
-                    className={styles.skill_icon}
-                    src={pass}
-                    alt='skill-icon'   
-                    width={50}
-                    height={50}
-                  />
-                  <Card.Text className={styles.skill_name}>
-                    {skill_name}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              ))}
-            </Card.Body>
-          </Card>
+          <SkillCards skilldata={skill_many} title={"成果物を作った経験がある"}/>
+          <SkillCards skilldata={skill_few} title={"授業や趣味で使ったことがある"}/>
+          <SkillCards skilldata={skill_tool} title={"使った経験があるツール"}/>
         </Row>
       </Container>
     )

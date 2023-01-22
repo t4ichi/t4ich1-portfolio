@@ -1,47 +1,51 @@
 import Image from 'next/image'
 import React from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap'
 import styles from '../styles/Skills.module.css'
 
 export const Works = () => {
     type work_data = {
         title: string;
         pass: string;
+        url: string;
+        text: string;
     }
 
     const works_game: work_data[] = [
         {
             title: 'カニホッケー',
-            pass: '/work/kani-game.png'
+            pass: '/work/kani-game.png',
+            url: 'https://itunes.apple.com/jp/app/id1563739832?mt=8',
+            text: '',
         },
         {
             title: 'ばくだんゲーム',
-            pass: '/work/bomb-game.png'
+            pass: '/work/bomb-game.png',
+            url: 'https://apps.apple.com/jp/app/bomb-games/id1602334691?mt=8',
+            text: '',
         },
         {
-            title: 'どうぶつ推理ゲーム',
-            pass: '/work/animal-search.png'
+            title: 'どうぶつ推理-オンライン対戦ゲーム-',
+            pass: '/work/animal-search.png',
+            url: 'https://itunes.apple.com/jp/app/id1609216148?mt=8',
+            text: '',
         },
     ];
     
     return(
-        <>
-        {works_game.map(({title,pass}) => (
-        <Col>
+        <Row xs={1} md={3} className="g-4">
+        {works_game.map((work_data) => (
+            <Col>
             <Card>
-            <Card.Img variant="top" src={pass} />
+                <a href={work_data.url}><Card.Img variant="top" src={work_data.pass}/></a>
             <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-                </Card.Text>
+                <Card.Title className="d-flex justify-content-center fw-bold">{work_data.title}</Card.Title>
+                <Card.Text>{work_data.text}</Card.Text>
             </Card.Body>
             </Card>
-        </Col>
+            </Col>
         ))}
-      </>
+       </Row>
     )
 }
 

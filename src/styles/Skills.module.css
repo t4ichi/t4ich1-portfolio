@@ -1,12 +1,11 @@
 .container{
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
+    justify-content: center;    
 }
 
 .card{
-    background-color:ghostwhite;
-    /* width: 40rem; */
     margin: auto;
     margin-top: 20px;
     text-align: center;
@@ -24,17 +23,14 @@
     filter:drop-shadow(1px 3px 5px rgba(0, 0, 0, 0.2));
 }
 
-.skill_body{
-    text-align: center;
-}   
-
 .skill_icon{
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 20%;
 }
 
-.skill_name{
+.skill_text{
     text-align: center;
+    white-space: nowrap;
+    font-size: small;
 }
-

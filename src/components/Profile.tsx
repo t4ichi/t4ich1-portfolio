@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Button, ButtonGroup, ButtonToolbar, Card, Col, Container, ListGroup, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
+import { Card, Container, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import styles from '../styles/Profile.module.css'
 import user_icon from '../images/user-icon.png'
 import { MyLink } from '../domain/entities'
@@ -25,7 +25,7 @@ export const Profile = () => {
     {
       title: 'AppStore',
       pass: '/profile/app-store.svg',
-      url: 'https://zenn.dev/t4ich1'
+      url: 'https://apps.apple.com/us/developer/taichi-ito/id1616435870'
     },
     {
       title: 'Blog',
@@ -43,29 +43,19 @@ export const Profile = () => {
   return (
     <Container className={styles.container}>
       <Card className={styles.card}>
-        <Row>
-          <Col className={styles.icon_container}>
-            <Image 
+        <div className={styles.icon_container}>
+          <Image 
             className={styles.icon}
             alt='user-icon'   
             src={user_icon}
-            />
-          </Col>
-          
-          <Col>
-          <Card.Body>
-          <Card.Title><b>伊藤 太一</b></Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-        </Card.Body>
-          </Col>
-        </Row>
-      </Card>
-      <Row>
-        <Col className={styles.logo}>
-          {icons.map(({title,pass,url}) => (
+          />
+        </div>
+        <div>
+        <Card.Title className={styles.name}><b>Taichi Ito (伊藤 太一)</b></Card.Title>  
+        </div>
+        
+        <div className={styles.logo}>
+        {icons.map(({title,pass,url}) => (
             <OverlayTrigger
               placement="top"
               delay={{ show: 250, hide: 400 }}
@@ -81,8 +71,9 @@ export const Profile = () => {
               </a>
             </OverlayTrigger>
           ))}
-        </Col>
-      </Row>
+        </div>
+
+      </Card>
     </Container>
   )
 }

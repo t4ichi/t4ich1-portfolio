@@ -1,0 +1,18 @@
+.container{
+    margin: auto;
+    margin-top: 20px;
+    /* width: 50rem; */
+}
+
+
+.card{
+    display: flex;
+    justify-content:center;
+    /* background-color:ghostwhite; */
+    margin: auto;
+    margin-top: 20px;
+}
+
+.tr{
+    text-align: center;
+}
