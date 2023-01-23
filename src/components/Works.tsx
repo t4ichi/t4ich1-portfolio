@@ -16,19 +16,19 @@ export const Works = () => {
             title: 'カニホッケー',
             pass: '/work/kani-game.png',
             url: 'https://itunes.apple.com/jp/app/id1563739832?mt=8',
-            text: '',
+            text: '近くの人と遊べるアクションゲーム',
         },
         {
             title: 'ばくだんゲーム',
             pass: '/work/bomb-game.png',
             url: 'https://apps.apple.com/jp/app/bomb-games/id1602334691?mt=8',
-            text: '',
+            text: '押したボタンのどれかが爆発するだけのゲーム',
         },
         {
             title: 'どうぶつ推理-オンライン対戦ゲーム-',
             pass: '/work/animal-search.png',
             url: 'https://itunes.apple.com/jp/app/id1609216148?mt=8',
-            text: '',
+            text: 'オンライン対戦ができるパズルゲーム',
         },
     ];
     
@@ -40,7 +40,7 @@ export const Works = () => {
                 <a href={work_data.url}><Card.Img variant="top" src={work_data.pass}/></a>
             <Card.Body>
                 <Card.Title className="d-flex justify-content-center fw-bold">{work_data.title}</Card.Title>
-                <Card.Text>{work_data.text}</Card.Text>
+                <Card.Text className="d-flex justify-content-center">{work_data.text}</Card.Text>
             </Card.Body>
             </Card>
             </Col>
