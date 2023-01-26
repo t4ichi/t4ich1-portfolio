@@ -1,8 +1,5 @@
-import Image from 'next/image'
-import { Card, Col, Container, Row, Table,} from 'react-bootstrap'
+import { Container, Table,} from 'react-bootstrap'
 import styles from '../styles/Achievements.module.css'
-import { MyLink } from '../domain/entities'
-import Link from 'next/link'
 
 export const Achievements = () => {
   return (

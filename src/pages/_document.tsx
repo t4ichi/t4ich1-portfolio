@@ -1,6 +1,5 @@
 import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 
-// HTMLの最外殻をここで定義する
 export default class Document extends NextDocument {
   render() {
     return (
@@ -10,7 +9,7 @@ export default class Document extends NextDocument {
           <title>伊藤太一のポートフォリオ</title>
         </Head>
         <body>
-          <Main /> {/* pages/_app.tsxがここに読み込まれる */}
+          <Main />
           <NextScript />
         </body>
       </Html>

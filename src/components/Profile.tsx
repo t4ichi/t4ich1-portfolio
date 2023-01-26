@@ -2,7 +2,12 @@ import Image from 'next/image'
 import { Card, Container, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import styles from '../styles/Profile.module.css'
 import user_icon from '../images/user-icon.png'
-import { MyLink } from '../domain/entities'
+
+type MyLink = {
+  title: string;
+  pass: string;
+  url: string;
+}
 
 export const Profile = () => {
 

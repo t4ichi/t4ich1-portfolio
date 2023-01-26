@@ -1,4 +1,3 @@
-/* ページ全体で適用されるスタイルです。pages/_app.tsxで読み込まれます */
 html,
 body {
   padding: 0;
