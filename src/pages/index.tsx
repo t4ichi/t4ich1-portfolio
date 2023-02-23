@@ -1,5 +1,6 @@
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import Achievements from '../components/Achievements';
+import BestWork from '../components/BestWork';
 import Footer from '../components/Footer';
 import Profile from '../components/Profile';
 import { Skills } from '../components/Skills';
@@ -21,14 +22,19 @@ const IndexPage = () => {
             </Col>
           </>
           <div>
+            <h1 className={styles.title}>Best Work</h1>
+            <BestWork />
+          </div>
+
+          <div>
             <h1 className={styles.title}>Skills</h1>
             <Skills />
           </div>
-          
+
           <div>
-            <h1 className={styles.title}>Works</h1>
+            <h1 className={styles.title}>Other Work</h1>
+            <Works />
           </div>
-          <Works />
         </Row>
       </Container>
     <Footer />

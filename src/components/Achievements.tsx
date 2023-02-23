@@ -3,7 +3,6 @@ import styles from '../styles/Achievements.module.css'
 
 export const Achievements = () => {
   return (
-    
     <Container className={styles.container}>
       <Table striped bordered>
       <thead >
@@ -36,17 +35,6 @@ export const Achievements = () => {
         </tr>
         <tr className={styles.tr}>
           <td>2022</td>
-          <td>8</td>
-          <td>
-            <a href="https://job.tracks.run/share/gamefreak-all-04/d6a8b35a-2909-4130-bb3c-2cab0076951f"
-                className="text-decoration-underline">
-                ゲームフリーク プログラミングチャレンジ 
-            </a>
-            <text>  1位</text>
-        </td>
-        </tr>
-        <tr className={styles.tr}>
-          <td>2022</td>
           <td>11</td>
           <td>AppStore 総ダウンロード数2000達成</td>
         </tr>
@@ -54,7 +42,7 @@ export const Achievements = () => {
           <td>2023</td>
           <td>1</td>
           <td>
-            <a  href="https://job.mynavi.jp/24/pc/corpinfo/displayInternship/index?optNo=As2Gl&corpId=66479"
+            <a href="https://saiyou-org.www.mynavi.jp/saiyou/news/internship/1045/"
                 className="text-decoration-underline">
                 マイナビハッカソン型インターンシップ
             </a> 
